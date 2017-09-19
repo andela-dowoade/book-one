@@ -12,7 +12,7 @@ var bookSchema = new Schema({
   },
 
   published: {
-    type: String
+    type: Number,
   },
 
   excerpt: String
@@ -23,8 +23,6 @@ bookSchema.plugin(autoIncrement.plugin, {
   startAt: 1
 });
 
-// Disable auto indexing
-bookSchema.set('autoIndex', false);
-bookSchema.index({ name: 1, published: 1 });
+bookSchema.index({ title: 1, published: 1 });
 
 module.exports = mongoose.model('Books', bookSchema);
