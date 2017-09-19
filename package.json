@@ -1,0 +1,61 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "Some description",
+  "main": "document-manager.js",
+  "scripts": {
+    "test": "node index.js & istanbul cover jasmine tests/bend/app.spec.js && mv -f coverage bend_coverage && gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andela-dowoade/starter.git"
+  },
+  "keywords": [
+  ],
+  "author": "Owoade Dotun",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andela-dowoade/starter/issues"
+  },
+  "homepage": "https://github.com/andela-dowoade/starter#readme",
+  "dependencies": {
+    "async": "^1.5.0",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.14.2",
+    "browserify": "^13.0.0",
+    "dotenv": "^2.0.0",
+    "express": "^4.13.3",
+    "gulp": "^3.9.0",
+    "gulp-bower": "0.0.11",
+    "gulp-clean": "^0.3.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-cssnano": "^2.1.0",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-jade": "^1.1.0",
+    "gulp-jshint": "^2.0.0",
+    "gulp-karma": "0.0.5",
+    "gulp-less": "^3.0.5",
+    "gulp-nodemon": "^2.0.6",
+    "gulp-rename": "^1.2.2",
+    "gulp-rimraf": "^0.2.0",
+    "jasmine": "^2.4.1",
+    "jshint": "^2.9.1",
+    "jsonwebtoken": "^5.5.4",
+    "karma": "^0.13.19",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-coverage": "^0.5.3",
+    "karma-coveralls": "^1.1.2",
+    "karma-jasmine": "^0.3.6",
+    "kerberos": "0.0.17",
+    "mockgoose": "^5.1.0",
+    "moment": "^2.11.0",
+    "mongoose": "^4.3.4",
+    "mongoose-auto-increment": "^5.0.1",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "devDependencies": {
+    "codecov": "^1.0.1",
+    "istanbul": "^0.4.2",
+    "superagent": "^1.7.2"
+  }
+}
