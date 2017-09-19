@@ -28,7 +28,9 @@ var BookCtrl = class {
   }
 
   list(req, res) {
-    bookModel.find(req.query).limit(req.query.limit).then(function(books) {
+    var skip = parseInt(req.query.skip);
+    var limit = parseInt(req.query.limit);
+    bookModel.find({}).skip(skip).limit(limit).sort(req.params.sort).then(function(books) {
       res.status(200).json(books);
     }).catch(function() {
       res.status(400).json({ message: 'invalid request params' });
