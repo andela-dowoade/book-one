@@ -13,7 +13,15 @@ describe('User', () => {
   });
 
   it('should /', (done) => {
-    request.get(path + '/api/')
+    request.get(path + '/api/v1')
+      .end((err, res) => {
+        expect(res.status).toBe(200);
+        done();
+      });
+  });
+
+  it('should /books', (done) => {
+    request.get(path + '/api/v1/books')
       .end((err, res) => {
         expect(res.status).toBe(200);
         done();
