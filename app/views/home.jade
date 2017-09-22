@@ -1,4 +1,4 @@
-div.doc-container(flex ng-init="init()" ngcloak)
+div.doc-container(flex ng-init="init()")
   div.md-padding(layout="column")
     div.files-content(flex)
       p.md-title.banner Book One (A Fake Amazon One)
@@ -12,7 +12,7 @@ div.doc-container(flex ng-init="init()" ngcloak)
         md-grid-tile(md-ink-ripple ng-repeat="book in books")
           md-card.tile(ng-click="view(book)")
             div.md-padding(flex)
-              h4.title-display.center {{book.title | decodeURI}}
+              h4.title-display.center {{book.title : decodeURI}}
             div.cover(style="backgroundUrl(book.image_url)")
           md-grid-tile-footer.grid-footer
             div.center {{book.published}}
