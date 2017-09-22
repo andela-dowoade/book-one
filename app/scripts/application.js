@@ -3,6 +3,7 @@ angular.module('app.services', []);
 angular.module('app.controllers', []);
 
 require('./services/user');
+require('./services/book');
 require('./services/auth');
 require('./services/token-injector');
 
@@ -13,21 +14,13 @@ angular.module('app', ['ngResource', 'ngMaterial',
     'app.controllers', 'app.services'
   ])
   .controller('defaultController', function(
-    $rootScope, $scope, $state, $mdSidenav) {
+    $rootScope, $scope) {
     $scope.init = () => {
-      if (Auth.isLoggedIn()) {
-        $rootScope.currentUser = Auth.getUser().data;
-        $scope.name = $rootScope.currentUser.name.first +
-          ' ' + $rootScope.currentUser.name.last;
-      }
+      console.log('App started sucessfully');
     };
-
-    $scope.logout = () => {
-      delete $rootScope.currentUser;
-      Auth.logout();
-      $state.go('home', null, {
-        reload: true
-      });
+  }).filter('decodeURI', function() {
+    return function(data) {
+      return decodeURI(data);
     };
   });
 
@@ -39,8 +32,16 @@ angular.module('app').config((
   $stateProvider.state('home', {
     url: '/',
     templateUrl: 'views/home.html',
-    controller: 'defaultController'
-  }).state('404', {
+    controller: 'homeController'
+  }).state('detail', {
+    url: '/detail/:id',
+    params : {
+      id: null
+    },
+    templateUrl: 'views/detail.html',
+    controller: 'homeController'
+  })
+  .state('404', {
     url: '/404',
     templateUrl: 'views/404.html',
     controller: 'defaultController'
@@ -48,18 +49,6 @@ angular.module('app').config((
 
   $locationProvider.html5Mode(true);
 
-}).run(($rootScope, $state, Auth, Users) => {
-  if (Auth.isLoggedIn()) {
-    Users.session((err, user) => {
-      if (user) {
-        $rootScope.currentUser = Auth.getUser().data;
-      } else {
-        Auth.logout();
-        delete $rootScope.currentUser;
-        $state.go('home');
-      }
-    });
-  } else {
-    $state.go('home');
-  }
+}).run(($rootScope, $state) => {
+  $state.go('home');
 });

@@ -1,0 +1,9 @@
+div.doc-container(flex ng-init="detailInit()")
+  div.md-padding(layout="column")
+    p.center {{selectedBook.title | decodeURI}}
+    p.center {{selectedBook.excerpt | decodeURI}}
+    p.center {{selectedBook.price}}
+    p.center {{selectedBook.published}}
+    md-button(ng-click="buy(selectedBook)") BUY
+
+

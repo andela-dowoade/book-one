@@ -1,4 +1,11 @@
+@primary: #0D83DD; //#156099;
+@secondary: #424249;
+@tetiary: #00cc66;
 @white: #fff;
+
+
+
+
 
 /*General styles*/
 
@@ -6,6 +13,16 @@ body {
   text-transform: none;
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 1.3em;
+}
+
+a:hover {
+  text-decoration: none;
+  color: @white !important;
+}
+
+a:focus {
+  text-decoration: none;
+  color: @white !important;
 }
 
 @media only screen and (min-width: 600px) {
@@ -46,6 +63,218 @@ body {
   }
 }
 
+.md-button.primary-button {
+  color: @white;
+  background: @tetiary;
+}
+
+.md-button:hover.primary-button:hover {
+  color: @white;
+  background: @tetiary;
+  opacity: 0.7;
+}
+
+.container {
+  padding: 50px 150px 0 150px;
+}
+
+.doc-container {
+  display: block;
+  min-height: 100%;
+  height: 100%;
+  overflow: scroll;
+}
+
+.banner {
+  text-align: center;
+  color: rosybrown;
+  font-size: 34px;
+}
+
+.center {
+  text-align: center;
+}
+
+md-grid-tile-footer.grid-footer {
+  height: 120px;
+  padding: 0;
+  background: none;
+}
+
+md-grid-tile-footer figcaption {
+  height: 100%;
+  width: 100%;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.role-container {
+  min-height: 100%;
+  height: auto;
+  color: @primary;
+  font-size: 0.9em;
+}
+
+.files-content {
+  display: block;
+  height: 100%;
+  margin: 0 15% 0 15%;
+}
+
+.add-image {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #666;
+}
+
+md-card.tile {
+  width: 100%;
+  height: 98%;
+  margin: 0;
+}
+
+.title-display {
+  margin-top: 0;
+  color: forestgreen;
+  font-size: 20px;
+  margin-top: 0;
+  word-wrap: break-word;
+  overflow: inherit;
+  color: #228b22;
+}
+
+.history-content {
+  margin-top: 30px;
+}
+
+.history-banner {
+  color: forestgreen;
+  font-size: 25px;
+}
+
+.cover {
+  z-index: 5;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.content-display {
+  font-size: 100%;
+  line-height: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+md-grid-tile-footer.footer {
+  height: 1%;
+}
+
+.margin-left {
+  margin-left: 75px;
+}
+
+.full {
+  width: 100%;
+  height: 100%;
+}
+
+.ta-editor {
+  min-height: 900px;
+  overflow: auto;
+  font-family: inherit;
+  font-size: 100%;
+}
+
+.no-padding {
+  margin: 0;
+  padding: 0;
+}
+
+.fa-style {
+  margin: 0 5px 0 5px;
+}
+
+.color-greenish {
+  color: @tetiary;
+}
+
+.color-bluish {
+  color: @primary;
+}
+
+.color-white {
+  color: @white;
+}
+
+.color-blackish {
+  color: @secondary;
+}
+
+md-input-container .md-select {
+  color: @white;
+}
+
+md-input-container.push {
+  padding-bottom: 10px;
+  width: 100%;
+  margin: 3px;
+}
+
+md-input-container.push label,
+md-input-container.push .md-placeholder {
+  color: #eee !important;
+}
+
+md-input-container.push .md-input {
+  height: 45px;
+  color: @white;
+}
+
+md-input-container.push:not(.md-input-invalid).md-input-focused .md-input {
+  border-color: @white;
+  height: 60px;
+}
+
+md-input-container.pop {
+  padding-bottom: 10px;
+  width: 100%;
+}
+
+md-input-container.pop.md-input-focused label,
+md-input-container.pop.md-input-focused .md-placeholder {
+  color: @tetiary !important;
+}
+
+md-input-container.pop .md-input {
+  height: 45px;
+}
+
+md-input-container.pop:not(.md-input-invalid).md-input-focused .md-input {
+  border-color: @tetiary;
+  height: 60px;
+}
+
+.error {
+  padding: 0;
+  margin: 0;
+  color: #fff;
+  background: @white;
+}
+
+.errorStatus {
+  padding: 0;
+  margin: 0;
+  color: red;
+}
+
+
+
+
+
 /* site footer*/
 
 .footer {
@@ -53,4 +282,163 @@ body {
   color: @white;
   height: 60px !important;
   font-size: 1.1em !important;
+  background: @secondary;
+}
+
+
+
+
+
+
+/*****Pagination pen by cssPro****
+*http://codepen.io/lmacchiavelli/pen/KslLx****
+*****/
+
+.archive-pages li a:hover {
+  color: #000;
+}
+
+.archive-pages li.selected {
+  color: white;
+}
+
+.archive-pages a,
+.archive-pages a:visited {
+  color: @white;
+}
+
+.archive-pages li.selected {
+  color: white;
+  background: @primary;
+  background: -moz-radial-gradient(center, ellipse cover, rgba(53, 121, 214, 1) 0%, rgba(53, 121, 214, 1) 91%, rgba(27, 85, 157, 1) 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(53, 121, 214, 1)), color-stop(91%, rgba(53, 121, 214, 1)), color-stop(100%, rgba(27, 85, 157, 1)));
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(53, 121, 214, 1) 0%, rgba(53, 121, 214, 1) 91%, rgba(27, 85, 157, 1) 100%);
+  background: -o-radial-gradient(center, ellipse cover, rgba(53, 121, 214, 1) 0%, rgba(53, 121, 214, 1) 91%, rgba(27, 85, 157, 1) 100%);
+  background: -ms-radial-gradient(center, ellipse cover, rgba(53, 121, 214, 1) 0%, rgba(53, 121, 214, 1) 91%, rgba(27, 85, 157, 1) 100%);
+  background: radial-gradient(ellipse at center, rgba(53, 121, 214, 1) 0%, rgba(53, 121, 214, 1) 91%, rgba(27, 85, 157, 1) 100%);
+}
+
+.archive-pages li.selected:hover {
+  cursor: default;
+  background: rgb(53, 121, 214);
+  background: -moz-radial-gradient(center, ellipse cover, rgba(53, 121, 214, 1) 0%, rgba(53, 121, 214, 1) 91%, rgba(27, 85, 157, 1) 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(53, 121, 214, 1)), color-stop(91%, rgba(53, 121, 214, 1)), color-stop(100%, rgba(27, 85, 157, 1)));
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(53, 121, 214, 1) 0%, rgba(53, 121, 214, 1) 91%, rgba(27, 85, 157, 1) 100%);
+  background: -o-radial-gradient(center, ellipse cover, rgba(53, 121, 214, 1) 0%, rgba(53, 121, 214, 1) 91%, rgba(27, 85, 157, 1) 100%);
+  background: -ms-radial-gradient(center, ellipse cover, rgba(53, 121, 214, 1) 0%, rgba(53, 121, 214, 1) 91%, rgba(27, 85, 157, 1) 100%);
+  background: radial-gradient(ellipse at center, rgba(53, 121, 214, 1) 0%, rgba(53, 121, 214, 1) 91%, rgba(27, 85, 157, 1) 100%);
+}
+
+.archive-pages li:hover {
+  background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(196, 196, 196, 1) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(100%, rgba(196, 196, 196, 1)));
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(196, 196, 196, 1) 100%);
+  background: -o-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(196, 196, 196, 1) 100%);
+  background: -ms-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(196, 196, 196, 1) 100%);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(196, 196, 196, 1) 100%);
+}
+
+.archive-pages li a {
+  cursor: pointer;
+  line-height: 20px;
+  display: block;
+  padding: 5px;
+  float: left;
+  width: 20px;
+  text-aling: center;
+}
+
+.archive-pages {
+  display: block;
+  background-color: @secondary;
+  float: left;
+  padding: 0px;
+  margin: 0px;
+  font-size: .8em;
+  border: 1px solid silver;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+
+.archive-pages ul {
+  float: left;
+  margin: 0px;
+  padding: 10px;
+  list-style: none;
+}
+
+.archive-pages li {
+  border: 1px solid silver;
+  float: left;
+  font-weight: 700;
+  margin: 0 2px;
+  text-align: center;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+
+.archive-pages .first a,
+.archive-pages .previous a,
+.archive-pages .next a,
+.archive-pages .last a {
+  overflow: hidden;
+  white-space: nowrap;
+  -webkit-transition-duration: 300ms;
+  -webkit-transition-property: width, text-indent, letter-spacing;
+  -webkit-transition-timing-function: ease;
+  -moz-transition-duration: 300ms;
+  -moz-transition-property: width, text-indent, letter-spacing;
+  -moz-transition-timing-function: ease;
+  -o-transition-duration: 300ms;
+  -o-transition-property: width, text-indent, letter-spacing;
+  -o-transition-timing-function: ease;
+}
+
+.archive-pages a {
+  text-decoration: none;
+}
+
+.archive-pages .next a:after,
+.archive-pages .last a:after {
+  content: " »";
+}
+
+.archive-pages .first a:before,
+.archive-pages .previous a:before {
+  content: "« "
+}
+
+.archive-pages .first a:hover,
+.archive-pages .previous a:hover,
+.archive-pages .next a:hover,
+.archive-pages .last a:hover {
+  width: 100px;
+  text-indent: 0;
+  letter-spacing: 0px;
+}
+
+.archive-pages .first a {
+  text-indent: 0;
+  letter-spacing: 0;
+  width: 100px;
+}
+
+.archive-pages .previous a {
+  text-indent: 0;
+  letter-spacing: 0;
+  width: 100px;
+}
+
+.archive-pages .next a {
+  text-indent: 0;
+  letter-spacing: 0;
+  width: 100px;
+}
+
+.archive-pages .last a {
+  text-indent: 0;
+  letter-spacing: 0;
+  width: 100px;
 }
