@@ -18,6 +18,10 @@ angular.module('app', ['ngResource', 'ngMaterial',
     $scope.init = () => {
       console.log('App started sucessfully');
     };
+  }).filter('decodeURI', function() {
+    return function(data) {
+      return decodeURI(data);
+    };
   });
 
 angular.module('app').config((
@@ -29,7 +33,15 @@ angular.module('app').config((
     url: '/',
     templateUrl: 'views/home.html',
     controller: 'homeController'
-  }).state('404', {
+  }).state('detail', {
+    url: '/detail/:id',
+    params : {
+      id: null
+    },
+    templateUrl: 'views/detail.html',
+    controller: 'homeController'
+  })
+  .state('404', {
     url: '/404',
     templateUrl: 'views/404.html',
     controller: 'defaultController'

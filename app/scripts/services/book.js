@@ -11,9 +11,19 @@ angular.module('app.services')
       stripTrailingSlashes: false
     });
 
-    resource.list = (page, sort, cb) => {
+    resource.list = (page, sort, search, cb) => {
       var skip = page * 10;
-      $http.get('/api/v1/books?sort=' + sort + 'limit=10&skip=' + skip)
+      var search = search ? search : '';
+      $http.get('/api/v1/books?sort=' + sort + '&limit=10&skip=' + skip + '&search=' + search)
+        .then((res) => {
+          cb(null, res.data);
+        }).catch(function(err) {
+          cb(err);
+        });
+    };
+
+    resource.getBook = (id, cb) => {
+      $http.get('/api/v1/books/' + id)
         .then((res) => {
           cb(null, res.data);
         }).catch(function(err) {
