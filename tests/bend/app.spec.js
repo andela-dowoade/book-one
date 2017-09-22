@@ -21,7 +21,7 @@ describe('User', () => {
   });
 
   it('should it should not return detail for wrong value', (done) => {
-    request.get(path + '/api/v1/books/gh')
+    request.get(path + '/api/v1/books/fake')
       .end((err, res) => {
         expect(res.status).toBe(400);
         done();
